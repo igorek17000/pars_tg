@@ -1,0 +1,487 @@
+[
+    {
+        "updates": {
+            "_": "updates",
+            "updates": [
+                {
+                    "_": "updateNewChannelMessage",
+                    "message": {
+                        "_": "message",
+                        "flags": 8406016,
+                        "out": false,
+                        "mentioned": false,
+                        "media_unread": false,
+                        "silent": false,
+                        "post": true,
+                        "from_scheduled": false,
+                        "legacy": false,
+                        "edit_hide": false,
+                        "pinned": false,
+                        "noforwards": false,
+                        "id": 2806,
+                        "peer_id": {
+                            "_": "peerChannel",
+                            "channel_id": "1521683754"
+                        },
+                        "date": 1654185628,
+                        "message": "Чат для общения!\nГотовы?",
+                        "views": 1,
+                        "forwards": 0,
+                        "replies": {
+                            "_": "messageReplies",
+                            "flags": 1,
+                            "comments": true,
+                            "replies": 0,
+                            "replies_pts": 0,
+                            "channel_id": "1504464670"
+                        }
+                    },
+                    "pts": 4895,
+                    "pts_count": 1
+                }
+            ],
+            "users": [
+                {
+                    "_": "user",
+                    "flags": 33570859,
+                    "self": false,
+                    "contact": false,
+                    "mutual_contact": false,
+                    "deleted": false,
+                    "bot": true,
+                    "bot_chat_history": false,
+                    "bot_nochats": false,
+                    "verified": false,
+                    "restricted": false,
+                    "min": false,
+                    "bot_inline_geo": false,
+                    "support": false,
+                    "scam": false,
+                    "apply_min_photo": true,
+                    "fake": false,
+                    "id": "136817688",
+                    "access_hash": "16640793611474909931",
+                    "first_name": "Channel",
+                    "username": "Channel_Bot",
+                    "photo": {
+                        "_": "userProfilePhoto",
+                        "flags": 2,
+                        "has_video": false,
+                        "photo_id": "587627495930570665",
+                        "stripped_thumb": {
+                            "0": 1,
+                            "1": 8,
+                            "2": 8,
+                            "3": 177,
+                            "4": 242,
+                            "5": 249,
+                            "6": 95,
+                            "7": 237,
+                            "8": 103,
+                            "9": 52,
+                            "10": 81,
+                            "11": 69,
+                            "12": 112,
+                            "13": 51,
+                            "14": 173,
+                            "15": 31
+                        },
+                        "dc_id": 1
+                    },
+                    "bot_info_version": 4
+                }
+            ],
+            "chats": [
+                {
+                    "_": "channel",
+                    "flags": 9445408,
+                    "creator": false,
+                    "left": false,
+                    "broadcast": true,
+                    "verified": false,
+                    "megagroup": false,
+                    "restricted": false,
+                    "signatures": false,
+                    "min": false,
+                    "scam": false,
+                    "has_link": true,
+                    "has_geo": false,
+                    "slowmode_enabled": false,
+                    "call_active": true,
+                    "call_not_empty": false,
+                    "fake": false,
+                    "gigagroup": false,
+                    "noforwards": false,
+                    "id": "1521683754",
+                    "access_hash": "18345291894101999591",
+                    "title": "W - Trading",
+                    "photo": {
+                        "_": "chatPhoto",
+                        "flags": 2,
+                        "has_video": false,
+                        "photo_id": "5409196016219043582",
+                        "stripped_thumb": {
+                            "0": 1,
+                            "1": 8,
+                            "2": 8,
+                            "3": 207,
+                            "4": 253,
+                            "5": 223,
+                            "6": 151,
+                            "7": 223,
+                            "8": 52,
+                            "9": 81,
+                            "10": 69,
+                            "11": 2,
+                            "12": 72
+                        },
+                        "dc_id": 2
+                    },
+                    "date": 1648840134
+                }
+            ],
+            "date": 1654185627,
+            "seq": 0
+        }
+    },
+    {
+        "updates": {
+            "_": "updates",
+            "updates": [
+                {
+                    "_": "updateEditChannelMessage",
+                    "message": {
+                        "_": "message",
+                        "flags": 10535936,
+                        "out": false,
+                        "mentioned": false,
+                        "media_unread": false,
+                        "silent": false,
+                        "post": true,
+                        "from_scheduled": false,
+                        "legacy": false,
+                        "edit_hide": true,
+                        "pinned": false,
+                        "noforwards": false,
+                        "id": 2806,
+                        "peer_id": {
+                            "_": "peerChannel",
+                            "channel_id": "1521683754"
+                        },
+                        "date": 1654185628,
+                        "message": "Чат для общения!\nГотовы?",
+                        "views": 5,
+                        "forwards": 0,
+                        "replies": {
+                            "_": "messageReplies",
+                            "flags": 1,
+                            "comments": true,
+                            "replies": 0,
+                            "replies_pts": 5719,
+                            "channel_id": "1504464670"
+                        },
+                        "edit_date": 1654185631
+                    },
+                    "pts": 4896,
+                    "pts_count": 1
+                }
+            ],
+            "users": [
+                {
+                    "_": "user",
+                    "flags": 33570859,
+                    "self": false,
+                    "contact": false,
+                    "mutual_contact": false,
+                    "deleted": false,
+                    "bot": true,
+                    "bot_chat_history": false,
+                    "bot_nochats": false,
+                    "verified": false,
+                    "restricted": false,
+                    "min": false,
+                    "bot_inline_geo": false,
+                    "support": false,
+                    "scam": false,
+                    "apply_min_photo": true,
+                    "fake": false,
+                    "id": "136817688",
+                    "access_hash": "16640793611474909931",
+                    "first_name": "Channel",
+                    "username": "Channel_Bot",
+                    "photo": {
+                        "_": "userProfilePhoto",
+                        "flags": 2,
+                        "has_video": false,
+                        "photo_id": "587627495930570665",
+                        "stripped_thumb": {
+                            "0": 1,
+                            "1": 8,
+                            "2": 8,
+                            "3": 177,
+                            "4": 242,
+                            "5": 249,
+                            "6": 95,
+                            "7": 237,
+                            "8": 103,
+                            "9": 52,
+                            "10": 81,
+                            "11": 69,
+                            "12": 112,
+                            "13": 51,
+                            "14": 173,
+                            "15": 31
+                        },
+                        "dc_id": 1
+                    },
+                    "bot_info_version": 4
+                }
+            ],
+            "chats": [
+                {
+                    "_": "channel",
+                    "flags": 9445408,
+                    "creator": false,
+                    "left": false,
+                    "broadcast": true,
+                    "verified": false,
+                    "megagroup": false,
+                    "restricted": false,
+                    "signatures": false,
+                    "min": false,
+                    "scam": false,
+                    "has_link": true,
+                    "has_geo": false,
+                    "slowmode_enabled": false,
+                    "call_active": true,
+                    "call_not_empty": false,
+                    "fake": false,
+                    "gigagroup": false,
+                    "noforwards": false,
+                    "id": "1521683754",
+                    "access_hash": "18345291894101999591",
+                    "title": "W - Trading",
+                    "photo": {
+                        "_": "chatPhoto",
+                        "flags": 2,
+                        "has_video": false,
+                        "photo_id": "5409196016219043582",
+                        "stripped_thumb": {
+                            "0": 1,
+                            "1": 8,
+                            "2": 8,
+                            "3": 207,
+                            "4": 253,
+                            "5": 223,
+                            "6": 151,
+                            "7": 223,
+                            "8": 52,
+                            "9": 81,
+                            "10": 69,
+                            "11": 2,
+                            "12": 72
+                        },
+                        "dc_id": 2
+                    },
+                    "date": 1648840134
+                }
+            ],
+            "date": 1654185630,
+            "seq": 0
+        }
+    },
+    {
+        "updates": {
+            "_": "updates",
+            "updates": [
+                {
+                    "_": "updateEditChannelMessage",
+                    "message": {
+                        "_": "message",
+                        "flags": 11584512,
+                        "out": false,
+                        "mentioned": false,
+                        "media_unread": false,
+                        "silent": false,
+                        "post": true,
+                        "from_scheduled": false,
+                        "legacy": false,
+                        "edit_hide": true,
+                        "pinned": false,
+                        "noforwards": false,
+                        "id": 2806,
+                        "peer_id": {
+                            "_": "peerChannel",
+                            "channel_id": "1521683754"
+                        },
+                        "date": 1654185628,
+                        "message": "Чат для общения!\nГотовы?",
+                        "views": 11,
+                        "forwards": 0,
+                        "replies": {
+                            "_": "messageReplies",
+                            "flags": 7,
+                            "comments": true,
+                            "replies": 1,
+                            "replies_pts": 5721,
+                            "recent_repliers": [
+                                {
+                                    "_": "peerUser",
+                                    "user_id": "1946346588"
+                                }
+                            ],
+                            "channel_id": "1504464670",
+                            "max_id": 3351
+                        },
+                        "edit_date": 1654185642,
+                        "reactions": {
+                            "_": "messageReactions",
+                            "flags": 0,
+                            "min": false,
+                            "can_see_list": false,
+                            "results": [
+                                {
+                                    "_": "reactionCount",
+                                    "flags": 0,
+                                    "chosen": false,
+                                    "reaction": "🔥",
+                                    "count": 1
+                                }
+                            ]
+                        }
+                    },
+                    "pts": 4897,
+                    "pts_count": 1
+                }
+            ],
+            "users": [
+                {
+                    "_": "user",
+                    "flags": 33570859,
+                    "self": false,
+                    "contact": false,
+                    "mutual_contact": false,
+                    "deleted": false,
+                    "bot": true,
+                    "bot_chat_history": false,
+                    "bot_nochats": false,
+                    "verified": false,
+                    "restricted": false,
+                    "min": false,
+                    "bot_inline_geo": false,
+                    "support": false,
+                    "scam": false,
+                    "apply_min_photo": true,
+                    "fake": false,
+                    "id": "136817688",
+                    "access_hash": "16640793611474909931",
+                    "first_name": "Channel",
+                    "username": "Channel_Bot",
+                    "photo": {
+                        "_": "userProfilePhoto",
+                        "flags": 2,
+                        "has_video": false,
+                        "photo_id": "587627495930570665",
+                        "stripped_thumb": {
+                            "0": 1,
+                            "1": 8,
+                            "2": 8,
+                            "3": 177,
+                            "4": 242,
+                            "5": 249,
+                            "6": 95,
+                            "7": 237,
+                            "8": 103,
+                            "9": 52,
+                            "10": 81,
+                            "11": 69,
+                            "12": 112,
+                            "13": 51,
+                            "14": 173,
+                            "15": 31
+                        },
+                        "dc_id": 1
+                    },
+                    "bot_info_version": 4
+                },
+                {
+                    "_": "user",
+                    "flags": 1048643,
+                    "self": false,
+                    "contact": false,
+                    "mutual_contact": false,
+                    "deleted": false,
+                    "bot": false,
+                    "bot_chat_history": false,
+                    "bot_nochats": false,
+                    "verified": false,
+                    "restricted": false,
+                    "min": true,
+                    "bot_inline_geo": false,
+                    "support": false,
+                    "scam": false,
+                    "apply_min_photo": false,
+                    "fake": false,
+                    "id": "1946346588",
+                    "access_hash": "15602823353031163156",
+                    "first_name": "Lenar",
+                    "status": {
+                        "_": "userStatusRecently"
+                    }
+                }
+            ],
+            "chats": [
+                {
+                    "_": "channel",
+                    "flags": 9445408,
+                    "creator": false,
+                    "left": false,
+                    "broadcast": true,
+                    "verified": false,
+                    "megagroup": false,
+                    "restricted": false,
+                    "signatures": false,
+                    "min": false,
+                    "scam": false,
+                    "has_link": true,
+                    "has_geo": false,
+                    "slowmode_enabled": false,
+                    "call_active": true,
+                    "call_not_empty": false,
+                    "fake": false,
+                    "gigagroup": false,
+                    "noforwards": false,
+                    "id": "1521683754",
+                    "access_hash": "18345291894101999591",
+                    "title": "W - Trading",
+                    "photo": {
+                        "_": "chatPhoto",
+                        "flags": 2,
+                        "has_video": false,
+                        "photo_id": "5409196016219043582",
+                        "stripped_thumb": {
+                            "0": 1,
+                            "1": 8,
+                            "2": 8,
+                            "3": 207,
+                            "4": 253,
+                            "5": 223,
+                            "6": 151,
+                            "7": 223,
+                            "8": 52,
+                            "9": 81,
+                            "10": 69,
+                            "11": 2,
+                            "12": 72
+                        },
+                        "dc_id": 2
+                    },
+                    "date": 1648840134
+                }
+            ],
+            "date": 1654185641,
+            "seq": 0
+        }
+    }
+
+]
