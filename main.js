@@ -2,6 +2,8 @@ const MTProto = require('@mtproto/core/envs/node');
 const prompts = require('prompts');
 const tempStorage = require('@mtproto/core/src/storage/temp');
 const fs = require('fs');
+const {createSignal} = require("./api");
+const {handleInputChange} = require("./utils");
 
 const api_id = '13548374'; // insert api_id here
 const api_hash = '577bff7a17ad311d4d48145d65d620d4'; // insert api_hash here
@@ -15,21 +17,27 @@ const mtproto = new MTProto({
     },
 });
 
-async function getPhone() {
-    return (await prompts({
-        type: 'text',
-        name: 'phone',
-        message: 'Enter your phone number:'
-    })).phone
+async function getPhone () {
+    const { tel } = await JSON.parse(fs.readFileSync('auth.json', 'utf8'));
+
+    return tel
+}
+
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function getCode() {
     // you can implement your code fetching strategy here
-    return (await prompts({
-        type: 'text',
-        name: 'code',
-        message: 'Enter the code sent:',
-    })).code
+    const { code = null } = await JSON.parse(fs.readFileSync('auth.json', 'utf8'));
+
+    console.log('code', code)
+    if (!code) {
+        await timeout(3000);
+        return await getCode()
+    } else {
+        return code
+    }
 }
 
 async function getPassword() {
@@ -44,21 +52,29 @@ function startListener() {
     console.log('[+] starting listener')
     mtproto.updates.on('updates', ({ updates }) => {
 
-        //updateEditChannelMessage - изминение
+        const newChannelMessages = updates.filter((update) => {
+            if (update._ !== 'updateNewChannelMessage') return false
 
-       const newChannelMessages = updates.filter((update) => {
-           if (update._ !== 'updateNewChannelMessage') return false
+            const { message = {}} = update
 
-           const { message = {}} = update
+            if (message?.peer_id?.channel_id === "1521683754") return true
 
-           if (message?.peer_id?.channel_id === "1521683754") return true
 
-           return false
+            return false
 
-       }).map(({ message }) => message)
+        }).map(({ message }) => message)
+
+        newChannelMessages.forEach((message) => {
+            if( !message?.message.includes('покупка')) return
+
+            const send = handleInputChange(message?.message)
+
+            createSignal(JSON.stringify(send))
+
+        })
 
         // printing new channel messages
-        fs.appendFile('input.json', JSON.stringify(newChannelMessages), function (err) {
+        fs.appendFile( new Date().getHours() + '_input.json', JSON.stringify(newChannelMessages), function (err) {
             if (err) throw err;
             console.log('Saved!');
         });
@@ -75,7 +91,7 @@ mtproto
             _: 'inputUserSelf',
         },
     })
-    .then(startListener) // means the user is logged in -> so start the listener
+   // .then(startListener) // means the user is logged in -> so start the listener
     .catch(async error => {
 
         // The user is not logged in
@@ -98,8 +114,9 @@ mtproto
                 }
             })
             .then(async result => {
+                const code = await getCode()
                 return mtproto.call('auth.signIn', {
-                    phone_code: await getCode(),
+                    phone_code: code,
                     phone_number: phone_number,
                     phone_code_hash: result.phone_code_hash,
                 });
