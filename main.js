@@ -2,8 +2,7 @@ const MTProto = require('@mtproto/core/envs/node');
 const prompts = require('prompts');
 const tempStorage = require('@mtproto/core/src/storage/temp');
 const fs = require('fs');
-const {createSignal} = require("./api");
-const {handleInputChange} = require("./utils");
+const { funcAllCreate } = require("./utils");
 
 const api_id = '13548374'; // insert api_id here
 const api_hash = '577bff7a17ad311d4d48145d65d620d4'; // insert api_hash here
@@ -64,17 +63,12 @@ function startListener() {
 
         }).map(({ message }) => message)
 
-        newChannelMessages.forEach((message) => {
-            if( !message?.message.includes('покупка')) return
+        if(newChannelMessages.length === 0) return
 
-            const send = handleInputChange(message?.message)
-
-            createSignal(JSON.stringify(send))
-
-        })
+        funcAllCreate(newChannelMessages)
 
         // printing new channel messages
-        fs.appendFile( new Date().getHours() + '_input.json', JSON.stringify(newChannelMessages), function (err) {
+        fs.appendFile( 'input.json', JSON.stringify(newChannelMessages), function (err) {
             if (err) throw err;
             console.log('Saved!');
         });

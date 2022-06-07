@@ -1,3 +1,4 @@
+const {createSignal} = require("./api");
 
 
 const handleInputChange = (str) => {
@@ -83,13 +84,23 @@ const handleInputChange = (str) => {
         type,
         takeProfit,
         stopLoss: stopLoss ? stopLoss : getStopLoss(),
-      //  entry,
+        starting: 1,
         ...resLimit,
-   //     starting: 1,
     }
-
 
     return res
 }
 
-module.exports = { handleInputChange }
+const funcAllCreate = async (data) => {
+
+
+    for (let i = 0; i < data.length; i++) {
+        if( !data[i]?.message.includes('покупка')) return
+
+        const send = await handleInputChange(data[i]?.message)
+
+        await createSignal(send)
+    }
+}
+
+module.exports = { handleInputChange, funcAllCreate }

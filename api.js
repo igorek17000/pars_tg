@@ -18,12 +18,12 @@ const createSignal = async (data) => {
 
             console.log('err', JSON.stringify(err))
 
-            return 'Ошибка запроса createSignal'
+            return err
         })
 
     fs.appendFile( 'result_input.json', JSON.stringify({ data, res, time: new Date()}), function (err) {
         if (err) throw err;
-        console.log('Saved!');
+        console.log('Saved result!');
     });
 
     return res
