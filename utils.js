@@ -1,5 +1,32 @@
 const {createSignal} = require("./api");
+const { SYMBOL } = require("./constant");
 
+const getType = (str) => {
+    if (str.includes("LONG")) {
+        return 'LONG'
+    }
+
+    if (str.includes("SHORT")) {
+        return 'SHORT'
+    }
+
+    return null
+}
+
+const getMonet = (str) => {
+
+
+    for (let i = 0; i < SYMBOL.length; i++) {
+        item = SYMBOL[i]
+        const code = item.slice(0,item.lastIndexOf('USDT'))
+
+        if (str.includes(code)) {
+            return code + 'USDT'
+        }
+    }
+
+    return null
+}
 
 const handleInputChange = (str) => {
     let inputValue = str.split('\n') || []
@@ -15,9 +42,8 @@ const handleInputChange = (str) => {
     inputValue.forEach((item) => {
 
         if (item.includes('Futures')) {
-            const arrValue = item.split('. ')
-            moneta = arrValue[2] ? `${arrValue[2].toUpperCase()}USDT` : null
-            type = arrValue[0].toUpperCase()
+            moneta = getMonet(str.toUpperCase())
+            type = getType(str.toUpperCase())
         }
 
         if (item.toLocaleLowerCase().includes('цель')) {
@@ -83,6 +109,10 @@ const handleInputChange = (str) => {
        return { 'error': true }
     }
 
+    if(!type) {
+        return { 'error': true }
+    }
+
     const res = {
         symbol: moneta.replace(/ /g, ''),
         type,
@@ -102,6 +132,7 @@ const funcAllCreate = async (data) => {
         if( msg.includes('futures') ) {
             const send = await handleInputChange(data[i]?.message)
 
+            console.log('send', send)
             if (send?.error) continue
 
             await createSignal(send)
