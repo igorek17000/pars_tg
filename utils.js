@@ -103,7 +103,7 @@ const handleInputChange = (str) => {
         return (+entry + diffic).toFixed(lengthToFix(fix))
     }
 
-    const resLimit = limit.length ? { limit: limit.map((item)=> ({...item, quantity: Number((100 / (limit.length + 1)).toFixed(0))}))} : {}
+    const resLimit = limit.length ? { limitOrder: limit.map((item)=> ({...item, quantity: Number((100 / (limit.length + 1)).toFixed(0))}))} : {}
 
     if(!moneta) {
        return { 'error': true }
