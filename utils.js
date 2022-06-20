@@ -16,17 +16,15 @@ const handleInputChange = (str) => {
 
         if (item.includes('Futures')) {
             const arrValue = item.split('. ')
-            moneta = `${arrValue[2].toUpperCase()}USDT`
+            moneta = arrValue[2] ? `${arrValue[2].toUpperCase()}USDT` : null
             type = arrValue[0].toUpperCase()
         }
 
         if (item.toLocaleLowerCase().includes('цель')) {
 
-            const isDots = item.includes(':') ? 1 : 0
+            const arrValue = item.includes(':') ?  item.split(': ') :  item.split(' ')
 
-            const arrValue = item.split(' ')
-
-            const value = arrValue[1 + isDots]
+            const value = arrValue[1]
             limit.push({
                 price: value.replace(/,/g, '.').replace(/[^0-9^\d.]+/g, ""),
                 quantity: 0
@@ -44,6 +42,8 @@ const handleInputChange = (str) => {
         }
 
     })
+
+    if (limit.length === 0 ) return { 'error': true }
 
     limit.sort((a, d ) => {
         return a.price - d.price;
@@ -79,6 +79,10 @@ const handleInputChange = (str) => {
 
     const resLimit = limit.length ? { limit: limit.map((item)=> ({...item, quantity: Number((100 / (limit.length + 1)).toFixed(0))}))} : {}
 
+    if(!moneta) {
+       return { 'error': true }
+    }
+
     const res = {
         symbol: moneta.replace(/ /g, ''),
         type,
@@ -93,13 +97,16 @@ const handleInputChange = (str) => {
 
 const funcAllCreate = async (data) => {
 
-
     for (let i = 0; i < data.length; i++) {
-        if( !data[i]?.message.includes('покупка')) return
+        const msg = data[i]?.message.toLowerCase()
+        if( msg.includes('futures') ) {
+            const send = await handleInputChange(data[i]?.message)
 
-        const send = await handleInputChange(data[i]?.message)
+            if (send?.error) continue
 
-        await createSignal(send)
+            await createSignal(send)
+        }
+
     }
 }
 
